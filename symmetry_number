@@ -1,0 +1,16 @@
+int Symemtry_Number(int a[], int n)
+{
+	int i, j;
+	int tts = 0, lfsum = 0;
+	for (i = 0; i < n; i++)
+		tts = tts + a[i];
+	for (i = 0; i < n; i++)
+	{
+		tts = tts - a[i];
+		int rgsum = tts;
+		if (lfsum == rgsum)
+			return i;
+		lfsum = lfsum + a[i];
+	}
+	return -1;
+}
