@@ -1,0 +1,97 @@
+//FULL NAME: Tran Hoang Huy
+//STUDENT ID: 19TM11032
+//DOB: 30/01/2001
+//LAST MODIFIED: 
+//PURPOSE: 
+
+#include <iostream>
+#include <time.h>		
+#include <stdlib.h>
+#include <conio.h>		
+#include <string.h>		
+#include <math.h>		
+#include <iostream>		
+#include <fstream>
+#define MAX 100
+
+using namespace std;
+void TangDan(char a[], int n);
+void swap(char& a, char& b);
+void XoaViTriK(char a[], int& n, int k);
+void returncount(char Text[], int Count[], int length);
+char Text[MAX];
+int Count[MAX];
+int main()
+{
+
+	int i;
+	int count = 1;
+	do {
+		cin.getline(Text, MAX);
+		int length = strlen(Text);
+		int savelen = length;
+		TangDan(Text, length);
+		for (i = 0; i < length - 1; i++)
+		{
+			if (Text[i] == Text[i + 1])
+			{
+				count++;
+				XoaViTriK(Text, length, i);
+				Count[i] = count;
+				i = i - 1;
+			}
+			else if (Text[i] != Text[i + 1])
+			{
+				Count[i] = count;
+				Count[i + 1] = 1;
+				count = 1;
+			}
+		}
+
+
+		//////////
+		returncount(Text, Count, length);
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		cout << "\n";
+	} while (_getch() != 27);
+	return 0;
+
+}
+void TangDan(char a[], int n)
+{
+	int i, j;
+	for (i = 0; i < n - 1; i++)
+		for (j = i + 1; j < n; j++)
+			if (a[i] > a[j])
+				swap(a[i], a[j]);
+}
+
+
+
+void swap(char& a, char& b)
+{
+	char t;
+	t = a; a = b; b = t;
+}
+
+void XoaViTriK(char a[], int& n, int k)
+{
+	int i;
+	if (k < 0 || k >= n)
+		return;
+	{
+		for (i = k + 1; i < n; i++)
+		{
+			a[i - 1] = a[i];
+		}
+		n--;
+	}
+}
+void returncount(char Text[], int Count[], int length)
+{
+	int i;
+	for (i = 0; i < length; i++)
+	{
+		cout << Text[i] << " : " << Count[i] << endl;
+	}
+}
