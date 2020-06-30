@@ -1,0 +1,45 @@
+//FULL NAME: Tran Hoang Huy
+//STUDENT ID: 19TM11032
+//DOB: 30/01/2001
+//LAST MODIFIED: 
+//PURPOSE: 
+#include <iostream>
+#include <time.h>		//generating random numbers
+#include <stdlib.h>
+#include <conio.h>		//used for _getch()
+#include <string.h>		//performing operations on strings
+#include <math.h>		//performing mathematical operation
+#include <iostream>		//used for cin and cout
+#include <fstream>
+#define MAX 1000
+typedef struct m{
+	char s[MAX];
+};
+using namespace std;
+int main()
+{
+	int a[50], i, j, n;
+	do {
+		m a[] = {"mot","hai","ba","bon","nam","sau","bay","tam","chin"};
+		n = 10;
+	//	for (i=0;i<n;i++)
+	//	cin >> a[i].s;
+		int b;
+		cout << "Nhap so: ";
+		cin >> b;
+		for (i = 0; i < n; i++)
+		{
+			if (b == i)
+			{
+				cout << a[i - 1].s;
+			}
+		}
+
+
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		cout << "\n";
+	} while (_getch() != 27);
+	return 0;
+
+}
+
