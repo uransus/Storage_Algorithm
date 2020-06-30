@@ -1,0 +1,49 @@
+
+#include <iostream>
+#include <time.h>		
+#include <stdlib.h>
+#include <conio.h>		
+#include <string.h>		
+#include <math.h>		
+#include <iostream>		
+#include <fstream>
+#include <ctype.h>
+#define MAX 100
+
+using namespace std;
+#define MAX 100
+char s[MAX],x[MAX];
+int main()
+{
+
+	int i;
+	bool kt(true);
+	do {
+		cin.getline(s, MAX);
+		cin.getline(x, MAX);
+		int lens = strlen(s);
+		// _strupr_s(x);
+		// _strlwr_s(x);
+		for (i = 0; i < lens; i++)
+		{
+			if (strchr(x, s[i]) == NULL && strchr(x,_strupr_s(s))==NULL && strchr(x, _strlwr_s(s)) == NULL)
+			{
+				kt = false;
+				break;
+			}
+		}
+		if (kt == true)
+		{
+			cout << "true";
+		}
+		else
+			cout << "false";
+
+
+		
+		//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		cout << "\n";
+	} while (_getch() != 27);
+	return 0;
+
+}
