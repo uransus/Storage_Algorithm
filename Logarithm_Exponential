@@ -1,0 +1,36 @@
+//FULL NAME: Tran Hoang Huy
+//STUDENT ID: 19TM11032
+//DOB: 30/01/2001
+//LAST MODIFIED: 
+//PURPOSE: 
+
+#include <iostream>
+#include <time.h>		
+#include <stdlib.h>
+#include <conio.h>		
+#include <string.h>		
+#include <math.h>		
+#include <iostream>		
+#include <fstream>
+#include <ctype.h>
+using namespace std;
+
+int Loga(int a, int b)
+{
+	if (b / a == 1)
+		return 1;
+	else
+		return 1 + Loga(a, b/a);
+}
+int main()
+{	do
+	{
+	int a, b;
+	cout << "Logarit A of B\nInput a, b: \n";
+	cin >> a >> b;
+	cout << Loga(a,b);
+		cout << "\n";
+	} while (_getch() != 27);	
+	return 0;
+}
+///Logarit 4 of 1024 = 5
