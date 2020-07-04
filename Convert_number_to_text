@@ -24,6 +24,9 @@ int main()
 		n = 10;
 	//	for (i=0;i<n;i++)
 	//	cin >> a[i].s;
+	//	//or//
+	//	cin >> A[i].t;
+
 		int b;
 		cout << "Nhap so: ";
 		cin >> b;
